@@ -34,5 +34,13 @@ class ChessBoard:
         # checking if the move is within the bound of the board
         if end[0] < 0 or end[0] > 7 or end[1] <0 or end[1] > 7 :
             return False
+    #checking if start and end position are same
+        if start == end :
+            return False
+
+        #check if the piece can move to the end position 
+        if piece == "P":
+            #pawn movement rules
+                
 
         
