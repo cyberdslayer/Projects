@@ -41,6 +41,36 @@ class ChessBoard:
         #check if the piece can move to the end position 
         if piece == "P":
             #pawn movement rules
-                
+
+            #Determining the direction of the pawn based on its color
+            if piece.isupper():
+                direction = -1  #white pawn move up the board 
+            else:
+                direction = 1 #black pawn move down the board
+            
+
+            #checking if the pawn is moving one or two squares forward
+            if start[0] == 6 and end[0] == start[0] +2 * direction and end[1] == start[1]:
+                #check if there are any pieces in the way
+                if self.board[start[0] + direction][start[1]] == " " and self.board[end[0] [end[1]]] == " " :
+                    return True
+
+                elif end[0] == start[0] + direction and end[1] == start[1]:
+
+                    #checking if the pawn is moving one square
+                    if self.board[end[0]][end[1]] == " ":
+                        return True
+
+                elif abs(end[1] - start[1]) == 1 and end[0] == start[0] +direction:
+
+                    #check if the pawn is capturing diagonally
+                    if self.board[end[0]][end[1]] != " " and self.board[end[0][end[1]]].isupper() != piece.isupper():
+                        return True
+
+            elif piece = "R":
+                #? Rook rules
+
+                #
+
 
         
