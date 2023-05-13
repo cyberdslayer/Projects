@@ -67,9 +67,26 @@ class ChessBoard:
                     if self.board[end[0]][end[1]] != " " and self.board[end[0][end[1]]].isupper() != piece.isupper():
                         return True
 
-            elif piece = "R":
+        elif piece == "R":
                 #? Rook rules
 
+            #checking if the start and end are on the same row and column
+            if start_x != end_x and start_y != end_y:
+                return False
+
+            #check if there are any pieces between start and end 
+
+            if start_x == end_x: #Moving along the same row
+                for y in range(min(start_y, end_y) + 1, max(start_y, end_y)):
+                    if board[start_x][y] is not None:
+                        return False
+
+            else: #Moving along the same column 
+                for x in range(min(start_x, end_x) + 1, max(start_x, end_x)):
+                    if board[x][start_y] is not None:
+                        return False
+
+            return True
                 #
 
 
