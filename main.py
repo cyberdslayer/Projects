@@ -93,18 +93,18 @@ class ChessBoard:
 
         
         #? Rules for Bishop
-        elif piece == "B":
+        elif piece == "B" :
 
 
         #?Rules for Queen
-        elif piece == "Q":
+        elif piece == "Q" :
 
 
         #?Rules for King
-        elif piece == "K":
+        elif piece == "K" :
 
 
         return True
-        
+
         
             
