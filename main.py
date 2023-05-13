@@ -87,7 +87,24 @@ class ChessBoard:
                         return False
 
             return True
-                #
-
+                
+        #? Rules for Kinght
+        elif piece == "N" :
 
         
+        #? Rules for Bishop
+        elif piece == "B":
+
+
+        #?Rules for Queen
+        elif piece == "Q":
+
+
+        #?Rules for King
+        elif piece == "K":
+
+
+        return True
+        
+        
+            
