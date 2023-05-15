@@ -105,12 +105,30 @@ class ChessBoard:
         
         #? Rules for Bishop
         elif piece == "B" :
-            
+
+            # Check if the absolute difference in x and y coordinates in the same 
+            if abs(start_x - end_x) != abs(start_y - end_y) :
+                return False
+
+            # Check if there are any pieces in between start and end
+            x_dir = 1 if end_x > start_x else -1 #direction of x-coordinate movement
+            y_dir = 1 if end_y > start_y else -1 #Direction of y- coordinate movement 
+
+            x, y = start_x + x_dir, start_y + y_dir 
+
+            while x != end_x and y != end_y:
+                if board[x][y] is not None:
+                    return False
+
+                x += x_dir
+                y += y_dir
+
+                return True
 
 
         #?Rules for Queen
         elif piece == "Q" :
-
+            
 
         #?Rules for King
         elif piece == "K" :
