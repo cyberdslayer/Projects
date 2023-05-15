@@ -88,12 +88,24 @@ class ChessBoard:
 
             return True
                 
-        #? Rules for Kinght
+        #? Rules for Knight
         elif piece == "N" :
+
+            #calculate the absolute difference in x and y coordinates 
+            diff_x = abs(start_x - end_x)
+            diff_y = abs(satrt_x - end_y)
+
+            # Check if the move is in an L shape: 2 squares in one direction and 1 square in the other direction 
+            if (diff_x == 2 and diff_y == 1) or (diff_x == 1 and diff_y == 2):
+                return True
+
+            return False
+
 
         
         #? Rules for Bishop
         elif piece == "B" :
+            
 
 
         #?Rules for Queen
