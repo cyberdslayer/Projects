@@ -128,7 +128,11 @@ class ChessBoard:
 
         #?Rules for Queen
         elif piece == "Q" :
-            
+            """ Check if a queen move from start to end is
+            valid"""
+
+            if start_x == end_x or start_y == end_y or abs(start_x - end_x) == abs(start_y - end_y):
+                
 
         #?Rules for King
         elif piece == "K" :
