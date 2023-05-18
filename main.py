@@ -132,7 +132,21 @@ class ChessBoard:
             valid"""
 
             if start_x == end_x or start_y == end_y or abs(start_x - end_x) == abs(start_y - end_y):
-                
+                #checking if there are any pieces in between start and end
+                x_dir = 1 if end_x > start_y else -1 #direction of x coordinate movement
+                y_dir = 1 if end_y > start_y else -1 #direction of y coordinate movement
+
+                x, y = stat_y + x_dir, start_y + y_dir
+
+                while x != end_x and y != end_y:
+                    if board[x][y] is not None:
+                        return False
+
+                    x += x_dir
+                    y += y_dir
+                return True
+
+            return False
 
         #?Rules for King
         elif piece == "K" :
