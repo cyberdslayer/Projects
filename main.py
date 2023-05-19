@@ -156,8 +156,9 @@ class ChessBoard:
 
             #checking if the move in within one square
             if diff_x <= 1 and diff_y <=1 :
-                return True
-        return False
+                if board[end_x][end_y] is None or board[end_x][end_y].isupper() != board[start_x][start_y].isupper():
+                    return True
+            return False
 
         
             
