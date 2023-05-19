@@ -150,9 +150,14 @@ class ChessBoard:
 
         #?Rules for King
         elif piece == "K" :
+            #check id king move from start to end is valid
+            diff_x = abs(start_x - end_x)
+            diff_y = abs(start_y - end_y)
 
-
-        return True
+            #checking if the move in within one square
+            if diff_x <= 1 and diff_y <=1 :
+                return True
+        return False
 
         
             
