@@ -161,6 +161,17 @@ class ChessBoard:
             return False
 
         
+
+
+
+
+        def is_valid_black_pawn_move(board, start, end):
+            start_x, start_y = start
+            end_x, end_y = end
+
+            if start_x == end_x - 1  and start_y == end_y and board[end_x][end_y] is None:
+                return True
+            elif start_x == 1 and start_x == end_x - 2 and start_y == end_y and     
             
 
 
