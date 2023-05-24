@@ -17,3 +17,9 @@ for i in range(8):
         square.grid(row=i, column=j)
         row.append(square)
     chessboard.append(row)
+
+
+# Create a label to display the current player's turn
+turn_label = tk.Label(root, text="White's Turn", font= ("Arial", 14))
+turn_label.pack()
+
