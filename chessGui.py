@@ -1,3 +1,4 @@
+from PIL import Image, ImageTk
 import tkinter as tk
 
 # Create the main application window
