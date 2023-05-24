@@ -11,6 +11,9 @@ chessboard_frame.pack()
 #Create a 2-dimentional list to represent the chessboard
 chessboard = []
 for i in range(8):
-    row[]
+    row = []
     for j in range(8):
-        square
+        square = tk.Label(chessboard_frame, width = 5, height =  2, relief = tk.RAISED)
+        square.grid(row=i, column=j)
+        row.append(square)
+    chessboard.append(row)
