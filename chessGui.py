@@ -13,7 +13,7 @@ chessboard = []
 for i in range(8):
     row = []
     for j in range(8):
-        square = tk.Label(chessboard_frame, width = 5, height =  2, relief = tk.RAISED)
+        square = tk.Label(chessboard_frame, width = 10, height =  4, relief = tk.RAISED)
         square.grid(row=i, column=j)
         row.append(square)
     chessboard.append(row)
@@ -23,3 +23,15 @@ for i in range(8):
 turn_label = tk.Label(root, text="White's Turn", font= ("Arial", 14))
 turn_label.pack()
 
+# Create a function to handle sqare click event
+def handle_square_click(row, col):
+    print("Clicked on square", row, col)
+
+# Binding the click event to each square
+for i in range(8):
+    for j in range(8):
+        chessboard[i][j].bind("<Button-1>", lambda event, row = i, col = j: handle_square_click(row, col))
+
+
+# Running the main application loop
+root.mainloop()
