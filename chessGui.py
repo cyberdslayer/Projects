@@ -41,7 +41,7 @@ root.mainloop()
 #! Pieces images
 
 # Load and resize chess pieces images
-pawn_image = Image.open("pawn.png")
+pawn_image = Image.open("images/pawn.png")
 rezised_pawn_image = pawn_image.resize((square_size, square_size))
 
 # Create the GUI label for the chessboard square
