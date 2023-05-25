@@ -57,3 +57,4 @@ square_label.image = pawn_photo
 #Display the label on the chessboard 
 square_label.grid(row=row_index, column = col_index)
 
+
