@@ -40,22 +40,29 @@ root.mainloop()
 
 #! Pieces images
 
-# Load and resize chess pieces images
+
+# Load and resize chess piece images
+# Replace with the actual file path of the pawn image
 pawn_image = Image.open("pawn.png")
-square_size = 5
-rezised_pawn_image = pawn_image.resize(square_size, square_size)
+resized_pawn_image = pawn_image.resize((square_size, square_size))
 
 # Create the GUI label for the chessboard square
-square_label = tk.Label(chessboard_frame, width=square_size, height=square_size)
+square_label = tk.Label(
+    chessboard_frame, width=square_size, height=square_size)
 
 # Convert the resized image to Tkinter PhotoImage
 pawn_photo = ImageTk.PhotoImage(resized_pawn_image)
 
 # Assign the image to the label
 square_label.config(image=pawn_photo)
-square_label.image = pawn_photo
+square_label.image = pawn_photo  # Save a reference to prevent garbage collection
 
-#Display the label on the chessboard 
-square_label.grid(row=row_index, column = col_index)
+# Display the label on the chessboard
+square_label.grid(row=row_index, column=col_index)
+
+
+
+
+
 
 
