@@ -60,6 +60,7 @@ square_label.image = pawn_photo  # Save a reference to prevent garbage collectio
 # Display the label on the chessboard
 square_label.grid(row=row_index, column=col_index)
 
+pawn_image.show()
 
 
 
