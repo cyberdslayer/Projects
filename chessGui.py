@@ -34,6 +34,9 @@ for i in range(8):
         chessboard[i][j].bind("<Button-1>", lambda event, row = i, col = j: handle_square_click(row, col))
 
 
+def update_chessboard_gui():
+    for i in range(8)
+
 # Running the main application loop
 root.mainloop()
 
