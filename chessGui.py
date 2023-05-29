@@ -28,6 +28,10 @@ turn_label.pack()
 def handle_square_click(row, col):
     print("Clicked on square", row, col)
 
+
+def get_piece_at_position(i,j):
+    return chessboard[i][j]
+
 # Binding the click event to each square
 for i in range(8):
     for j in range(8):
@@ -35,7 +39,23 @@ for i in range(8):
 
 
 def update_chessboard_gui():
-    for i in range(8)
+    for i in range(8):
+        for j in range:
+            piece = get_piece_at_position(i, j)
+
+        #Clearing the square since there is no piece
+            if piece is None:
+                chessboard[i][j].config(image= None)
+
+            else:
+                #!case if there is a piece--> loading and rezing the image
+                piece_image = Image.open(f"{piece.color}_{piece.type}.png") #!left not complete
+                resized_piece_image = piece_image.resize((50,50))
+
+            # Now converting the image to tkinter PhotoImage
+            piece_photo = ImageTk.PhotoImage(resized_piece_image)
+
+            #Now assiging the image to the 
 
 # Running the main application loop
 root.mainloop()
