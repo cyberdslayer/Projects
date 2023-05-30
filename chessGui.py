@@ -56,7 +56,7 @@ def update_chessboard_gui():
             piece_photo = ImageTk.PhotoImage(resized_piece_image)
 
             #Now assiging the image to the 
-            chessboard[i][j].config(image = piece_photo)
+            chessboard[i][j].config(image = piece_photosd)
 
 # Running the main application loop
 root.mainloop()
