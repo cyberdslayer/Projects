@@ -89,5 +89,12 @@ pawn_image.show()
 
 
 
+#new game button
+new_game_button = tk.Button(root, text="New Game", command=start_new_game)
+new_game_button.pack()
+
+
+
+
 
 
