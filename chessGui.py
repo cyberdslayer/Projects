@@ -84,10 +84,13 @@ square_label.image = pawn_photo  # Save a reference to prevent garbage collectio
 # Display the label on the chessboard
 square_label.grid(row=row_index, column=col_index)
 
+
 pawn_image.show()
 
 
-
+#Create a label to display current player's turn
+turn_label = tk.Label(root, text="White's Turn", font=("Arial", 14))
+turn_label.pack()
 
 #new game button
 new_game_button = tk.Button(root, text="New Game", command=start_new_game)
