@@ -68,6 +68,7 @@ root.mainloop()
 # Load and resize chess piece images
 # Replace with the actual file path of the pawn image
 pawn_image = Image.open("pawn.png")
+square_size = 50
 resized_pawn_image = pawn_image.resize((square_size, square_size))
 
 # Create the GUI label for the chessboard square
@@ -95,6 +96,9 @@ turn_label.pack()
 #new game button
 new_game_button = tk.Button(root, text="New Game", command=start_new_game)
 new_game_button.pack()
+
+
+root.mainloop()
 
 
 

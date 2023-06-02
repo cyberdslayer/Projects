@@ -180,8 +180,12 @@ class ChessBoard:
         if start == end:
             return False
 
-        # cheking if the start position contains a black  penn
+        # cheking if the start position contains a black pawn
+        if board[start_x][start_y] != 'bp':
+            return False
 
+        # checking if pawn
+        
 
     # Valid move for black pawn
     # def is_valid_black_pawn_move(board, start, end):
