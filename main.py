@@ -184,7 +184,9 @@ class ChessBoard:
         if board[start_x][start_y] != 'bp':
             return False
 
-        # checking if pawn
+        # checking if pawn is moving one square forward
+        if start_y == end_y and start_x - end_x == 1 board[end_x][end_y] is None:
+            return True
         
 
     # Valid move for black pawn
