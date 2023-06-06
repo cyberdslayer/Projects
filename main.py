@@ -185,17 +185,21 @@ class ChessBoard:
             return False
 
         # checking if pawn is moving one square forward
-        if start_y == end_y and start_x - end_x == 1 board[end_x][end_y] is None:
+        if start_y == end_y and start_x - end_x == 1 and board[end_x][end_y] is None:
             return True
         
+        # Checking if the square is moving two squares forward on its
+        if start_y == end_y and start_x == 6 and start_x - end_x == 2 and board[end_x][end_y] is None and board[end_x +1 ][end_y] is None:
+            return True
 
-    # Valid move for black pawn
-    # def is_valid_black_pawn_move(board, start, end):
-    #     start_x, start_y = start
-    #     end_x, end_y = end
+        # Check if the pawn is capturing a piece 
+        if abs(start_y - end_y) == 1 and start_x - end_x == 1 and board[end_x][end_y] is not None and board[end_x][end_y][0] == 'w':
+            return True
 
-    #     if start_x == end_x - 1 and start_y == end_y and board[end_x][end_y] is None:
-    #         return True
-    #     elif start_x == 1 and start_x == end_x - 2 and start_y == end_y a
+        # Invalid move for a black pawn
+        return False                                  
+
+
+              
 
     
