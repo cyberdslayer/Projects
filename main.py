@@ -197,7 +197,39 @@ class ChessBoard:
             return True
 
         # Invalid move for a black pawn
-        return False                                  
+        return False               
+    
+    def is_valid_white_pawn_move(board, start, end):
+        start_x, start_y = start
+        end_x, end_y = end
+
+        # Check if the end position is within the bounds of the chessboard
+        if not is_valid_position(end_x, end_y):
+            return False
+
+        # Check if the start and end positions are the same
+        if start == end:
+            return False
+
+        # Check if the start position contains a white pawn
+        if board[start_x][start_y] != 'wp':
+            return False
+
+        # Check if the pawn is moving one square forward
+        if start_y == end_y and end_x - start_x == 1 and board[end_x][end_y] is None:
+            return True
+
+        # Check if the pawn is moving two squares forward on its first move
+        if start_y == end_y and start_x == 1 and end_x - start_x == 2 and board[end_x][end_y] is None and board[end_x - 1][end_y] is None:
+            return True
+
+        # Check if the pawn is capturing a piece
+        if abs(start_y - end_y) == 1 and end_x - start_x == 1 and board[end_x][end_y] is not None and board[end_x][end_y][0] == 'b':
+            return True
+
+        # Invalid move for a white pawn
+        return False
+                   
 
 
               
