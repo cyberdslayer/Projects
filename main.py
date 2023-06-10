@@ -229,9 +229,29 @@ class ChessBoard:
 
         # Invalid move for a white pawn
         return False
-                   
-
-
-              
-
     
+    def is_valid_rook_move(board, start, end):
+        start_x, start_y = start
+        end_x, end_y = end
+
+        # Checking if the end position is within the bounds of the chessboard
+        if not is_valid_position(end_x, end_y):
+            return False
+                   
+        # Checking if the start and end position are the same
+        if start == end:
+            return False
+        
+        # Checking if the start position contains a rook
+        if board[start_x][start_y] != 'R':
+            return False
+        
+        # Checking if the rook is moving along the same row
+        if start_x == end_x:
+            for y in range(min(start_y, end_y) + 1, max(start_y, end_y)):
+                if board[start_x][y] is not None:
+                    return False
+            return True
+        
+        # Checking if the rook is moving along the same column
+        if start_y == end_y:
