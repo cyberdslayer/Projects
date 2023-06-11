@@ -261,3 +261,5 @@ class ChessBoard:
             return True
         
         # Invalid move for a rook
+        return False
+        
