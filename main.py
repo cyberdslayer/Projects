@@ -259,3 +259,5 @@ class ChessBoard:
                 if board[x][start_y] is not None:
                     return False
             return True
+        
+        # Invalid move for a rook
