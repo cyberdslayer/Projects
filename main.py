@@ -255,3 +255,7 @@ class ChessBoard:
         
         # Checking if the rook is moving along the same column
         if start_y == end_y:
+            for x in range(min(start_x, end_x) + 1, max(start_x, end_x)):
+                if board[x][start_y] is not None:
+                    return False
+            return True
