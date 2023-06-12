@@ -159,13 +159,15 @@ class ChessBoard:
 
 
     # Valid position
+
+
+    # Valid move for black pawn
+
     def is_valid_position(end_x, end_y):
         # Checking if the end position is within the bounds of the chessboard
         if end_x < 0 or end_x>=8 or end_y < 0 or end_y >= 8:
             return False
         return True
-
-    # Valid move for black pawn
 
     def is_valid_black_pawn_move(board, start, end):
 
@@ -261,5 +263,32 @@ class ChessBoard:
             return True
         
         # Invalid move for a rook
+        return False
+    
+    def is_valid_knight_move(board, start, end):
+        start_x, start_y = start
+        end_x, end_y = end
+
+        # Checking if the end position is within the bounds of the chessboard
+        if not is_valid_position(end_x, end_y):
+            return False
+        
+        # Checking if the start and end position are the same
+        if start == end:
+            return False
+        
+        # Checking if the start position contains a knight
+        if board[start_x][start_y] != 'N':
+            return False
+        
+        # Calculating the absolute difference in x and y coordinates
+        diff_x = abs(start_x - end_x)
+        diff_y = abs(start_y - end_y)
+        
+        # Check if the move is in an L shape: 2 squares in one direction and 1 square in the other direction
+        if (diff_x == 2 and diff_y == 1) or (diff_x == 1 and diff_y == 2):
+            return True
+        
+        # Invalid move for a knight
         return False
         
