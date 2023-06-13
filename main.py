@@ -292,3 +292,28 @@ class ChessBoard:
         # Invalid move for a knight
         return False
         
+    def is_valid_bishop_move(board, start, end):
+        start_x, start_y = start
+        end_x, end_y = end
+
+        # Checking if the end position is within the bounds of the chessboard
+        if not is_valid_position(end_x, end_y):
+            return False
+        
+        # Checking if the start and end position are the same
+        if start == end:
+            return False
+        
+        # Checking if the start position contains a bishop
+        if board[start_x][start_y] != 'B':
+            return False
+        
+        # Checking if the absolute difference in x and y coordinates is the same
+        if abs(start_x - end_x) != abs(start_y - end_y):
+            return False
+        
+        # Checking if there are any pieces in between start and end
+        x_dir = 1 if end_x > start_x else -1
+        y_dir = 1 if end_y > start_y else -1
+
+        x, y = start_x + x_dir, start_y + y_dir
