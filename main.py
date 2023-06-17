@@ -317,4 +317,4 @@ class ChessBoard:
         y_dir = 1 if end_y > start_y else -1
 
         x, y = start_x + x_dir, start_y + y_dir
-        huiuhnujnjunjknkjnkj
+        
