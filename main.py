@@ -163,6 +163,16 @@ class ChessBoard:
 
     # Valid move for black pawn
 
+
+    #! Trying to initialize the start and end position globally
+    
+    start = (0, 0)
+    end = (0, 7) or (7, 0)
+    start_x, start_y = start
+    end_x, end_y = end
+
+        
+
     def is_valid_position(end_x, end_y):
         # Checking if the end position is within the bounds of the chessboard
         if end_x < 0 or end_x>=8 or end_y < 0 or end_y >= 8:
@@ -317,4 +327,49 @@ class ChessBoard:
         y_dir = 1 if end_y > start_y else -1
 
         x, y = start_x + x_dir, start_y + y_dir
+
+        while x != end_x and y != end_y:
+            if board[x][y] is not None:
+                return False
+
+            x += x_dir
+            y += y_dir
+
+        return True
+    
+    def is_valid_queen_move(board, start, end):
+        start_x, start_y = start
+        end_x, end_y = end
+
+        # Checking if the end position is within the bounds of the chessboard
+        if not is_valid_position(end_x, end_y):
+            return False
+        
+        # Checking if the start and end position are the same
+        if start == end:
+            return False
+        
+        # Checking if the start position contains a queen
+        if board[start_x][start_y] != 'Q':
+            return False
+        
+        # Checking if the queen is moving along the same row, column or diagonal
+        if start_x == end_x or start_y == end_y or abs(start_x - end_x) == abs(start_y - end_y):
+            # Checking if there are any pieces in between start and end
+            x_dir = 1 if end_x > start_x else -1
+            y_dir = 1 if end_y > start_y else -1
+
+            x, y = start_x + x_dir, start_y + y_dir
+
+            while x != end_x and y != end_y:
+                if board[x][y] is not None:
+                    return False
+
+                x += x_dir
+                y += y_dir
+
+            return True
+        
+        # Invalid move for a queen
+        return False
         
